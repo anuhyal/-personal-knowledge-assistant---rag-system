@@ -51,21 +51,22 @@ FastAPI → JSON response + sources
 ## Project structure
 
 rag-assistant/
-├── ingest.py          # Document loader, chunker, embedder, FAISS builder
 
-├── retriever.py       # FAISS search and query embedding
+├── ingest.py              # Document loader, chunker, embedder, FAISS builder
 
-├── llm.py             # Groq LLaMA integration and prompt builder
+├── retriever.py           # FAISS search and query embedding
 
-├── main.py            # FastAPI server with /query and /ingest endpoints
+├── llm.py                 # Groq LLaMA integration and prompt builder
 
-├── index.html         # Frontend UI (zero dependencies)
+├── main.py                # FastAPI server with /query and /ingest endpoints
 
-├── requirements.txt   # All Python dependencies
+├── index.html             # Frontend UI (zero dependencies)
 
-├── .env.example       # Environment variable template
+├── requirements.txt       # All Python dependencies
 
-└── faiss_index/       # Auto-created after first ingest
+├── .env.example           # Environment variable template
+
+└── faiss_index/         # Auto-created after first ingest
 
 ├── index.faiss
 

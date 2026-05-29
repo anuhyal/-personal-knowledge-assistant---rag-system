@@ -1,7 +1,7 @@
-# Personal Knowledge Assistant — RAG System
+# Personal Knowledge Assistant - RAG System
 
 A production-ready Retrieval-Augmented Generation (RAG) system built from scratch in Python. Feed it your PDFs, Word documents, text files,
-and web URLs — then ask it anything. Every answer is grounded in your documents with zero hallucination.
+and web URLs - then ask it anything. Every answer is grounded in your documents with zero hallucination.
 
 
 ## What it does
@@ -18,33 +18,50 @@ and web URLs — then ask it anything. Every answer is grounded in your document
 
 Documents (PDF, DOCX, TXT, URL)
 ↓
+
 Text extraction
 ↓
+
 Chunking (500 chars, 50 overlap)
 ↓
+
 Embeddings (all-MiniLM-L6-v2)
 ↓
+
 FAISS index (saved to disk)
 ↓
+
 Query → embed → search → top-5 chunks
 ↓
+
 Groq LLaMA 3.1 → grounded answer
 ↓
+
 FastAPI → JSON response + sources
+
 ---
 
 ## Project structure
 
 rag-assistant/
 ├── ingest.py          # Document loader, chunker, embedder, FAISS builder
+
 ├── retriever.py       # FAISS search and query embedding
+
 ├── llm.py             # Groq LLaMA integration and prompt builder
+
 ├── main.py            # FastAPI server with /query and /ingest endpoints
+
 ├── index.html         # Frontend UI (zero dependencies)
+
 ├── requirements.txt   # All Python dependencies
+
 ├── .env.example       # Environment variable template
+
 └── faiss_index/       # Auto-created after first ingest
+
 ├── index.faiss
+
 └── chunks.pkl
 
 ---

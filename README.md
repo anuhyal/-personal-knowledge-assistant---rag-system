@@ -17,24 +17,31 @@ and web URLs - then ask it anything. Every answer is grounded in your documents 
 ## Architecture
 
 Documents (PDF, DOCX, TXT, URL)
+
 ↓
 
 Text extraction
+
 ↓
 
 Chunking (500 chars, 50 overlap)
+
 ↓
 
 Embeddings (all-MiniLM-L6-v2)
+
 ↓
 
 FAISS index (saved to disk)
+
 ↓
 
 Query → embed → search → top-5 chunks
+
 ↓
 
 Groq LLaMA 3.1 → grounded answer
+
 ↓
 
 FastAPI → JSON response + sources
